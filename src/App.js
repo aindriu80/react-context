@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+
 
 import './App.css';
 
@@ -13,7 +13,7 @@ import Header from './components/header/header.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-import { setCurrentUser } from './redux/user/user.actions';
+
 
 import CurrentUserContext from './contexts/current-user/current-user.context';
 
@@ -75,8 +75,5 @@ class App extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
 
-export default connect(mapDispatchToProps)(App);
+export default App;
